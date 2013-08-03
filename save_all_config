@@ -2,7 +2,9 @@ puts ""
 puts "# Saving"
 puts "# Please wait..."
 puts ""
+
+# saving may take a long time
+set timeout 60
 send ":saveall"
 send "$break"
-set timeout 60
 

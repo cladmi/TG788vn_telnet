@@ -1,0 +1,26 @@
+
+send ":service host add name = redirections_server mode = server"
+send "$break"
+expect "{$user}=>"
+
+send ":service host rule add name=redirections_server  protocol=tcp  baseport=22  portrange=2022-2022"
+send "$break"
+expect "{$user}=>"
+# XMPP
+send ":service host rule add name=redirections_server  protocol=tcp portrange=5222-5222"
+send "$break"
+expect "{$user}=>"
+send ":service host rule add name=redirections_server  protocol=tcp portrange=5269-5269"
+send "$break"
+expect "{$user}=>"
+# web
+send ":service host rule add name=redirections_server  protocol=tcp portrange=80-80"
+send "$break"
+expect "{$user}=>"
+send ":service host rule add name=redirections_server  protocol=tcp portrange=443-443"
+send "$break"
+expect "{$user}=>"
+
+send ":service host assign name=redirections_server host=192.168.1.2 log=disabled"
+send "$break"
+
