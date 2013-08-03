@@ -1,0 +1,8 @@
+puts ""
+puts "# Saving"
+puts "# Please wait..."
+puts ""
+send ":saveall"
+send "$break"
+set timeout 60
+

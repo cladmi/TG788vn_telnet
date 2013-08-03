@@ -1,0 +1,3 @@
+# dump all the router configuration
+send ":config dump"
+send "$break"

@@ -1,0 +1,34 @@
+#! /usr/bin/expect
+
+
+set timeout 20
+set break "\n\r"
+
+# config
+set name "<router_ip>"
+set user "<user_name>"
+set password "<password>"
+
+set name "router"
+set user "Administrator"
+set password ""
+
+
+set script_name "[lindex $argv 0]"
+
+spawn telnet $name
+
+expect "Username : "
+send "$user"
+send "$break"
+expect "Password : "
+send "$password"
+send "$break"
+expect "{$user}=>"
+
+
+source "$script_name"
+
+expect "{$user}=>"
+send "exit"
+send "$break"

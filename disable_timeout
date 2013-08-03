@@ -1,0 +1,11 @@
+puts ""
+puts "# Disable telnet timeout"
+puts ""
+
+send ":env set var=SESSIONTIMEOUT value=0"
+send "$break"
+
+expect "{$user}=>"
+
+send ":env get var=SESSIONTIMEOUT"
+send "$break"
