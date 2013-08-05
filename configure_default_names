@@ -1,0 +1,10 @@
+
+#
+# Reboot hosts to take modifications into account
+#
+
+exec_cmd ":hostmgr update  mac_addr=14:da:e9:e2:ed:d1  host_type=Generic  host_name=floppy-dick user_friendly_name=floppy-dick dns_name=floppy-dick  type=L3-IP interface=ETH.Phys.ethif2 ip_intf=IP.Intf.LocalNetwork user_set=yes"
+exec_cmd ":dns server host add name=floppy-dick addr=192.168.1.2 addr6=2001:41d0:fe1e:aa00:16da:e9ff:fee2:edd1 ttl=0"
+
+exec_cmd ":hostmgr add  mac_addr=00:15:f2:00:4d:de  host_type=Generic  host_name=Unknown-00-15-f2-00-4d-de user_friendly_name=mint dns_name=mint  type=L3-IP interface=ETH.Phys.ethif1 ip_intf=IP.Intf.LocalNetwork user_set=yes"
+

@@ -5,6 +5,5 @@ puts ""
 
 # saving may take a long time
 set timeout 60
-send ":saveall"
-send "$break"
+exec_cmd ":saveall"
 

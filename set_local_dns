@@ -1,6 +1,3 @@
-send ":dhcp server lease flush"
-send "$break"
-expect "{$user}=>"
 
-send ":dhcp server pool config  name=LAN_private  localdns=enabled"
-send "$break"
+exec_cmd ":dhcp server lease flush"
+exec_cmd ":dhcp server pool config  name=LAN_private  localdns=enabled"

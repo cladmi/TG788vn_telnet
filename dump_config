@@ -1,3 +1,2 @@
 # dump all the router configuration
-send ":config dump"
-send "$break"
+exec_cmd ":config dump"

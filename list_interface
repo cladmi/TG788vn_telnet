@@ -2,6 +2,5 @@ puts ""
 puts "# List all connected interfaces"
 puts ""
 
-send ":hostmgr list"
-send "$break"
+exec_cmd ":hostmgr list"
 

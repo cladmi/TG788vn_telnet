@@ -1,20 +1,31 @@
 #! /usr/bin/expect
 
-
-set timeout 20
-set break "\n\r"
+set script_name "[lindex $argv 0]"
 
 # config
 set name "<router_ip>"
 set user "<user_name>"
 set password "<password>"
 
+# my config
 set name "router"
 set user "Administrator"
 set password ""
 
+set timeout 20
+set break "\n\r"
 
-set script_name "[lindex $argv 0]"
+proc exec_cmd { cmd_str } {
+    global user
+    global break
+
+    send "$cmd_str"
+
+    send "$break"
+    expect "{$user}=>"
+    return
+}
+
 
 spawn telnet $name
 
@@ -29,6 +40,5 @@ expect "{$user}=>"
 
 source "$script_name"
 
-expect "{$user}=>"
 send "exit"
 send "$break"
