@@ -1,3 +1,5 @@
 
+# add local dns in available DNS to have access to 'hostname.lan' entries
+
 exec_cmd ":dhcp server lease flush"
 exec_cmd ":dhcp server pool config  name=LAN_private  localdns=enabled"
