@@ -7,11 +7,6 @@ set name "<router_ip>"
 set user "<user_name>"
 set password "<password>"
 
-# my config
-set name "router"
-set user "Administrator"
-set password ""
-
 set timeout 20
 set break "\n\r"
 

@@ -5,10 +5,10 @@
 
 
 # static IP_addr
-set mac_addr "14:da:e9:e2:ed:d1"
-set hostname "floppy-dick"
+set mac_addr "00:01:02:03:04:05"
+set hostname "my_computer"
 set ip_addr "192.168.1.2"
-set ip6_addr "2001:41d0:fe1e:aa00:16da:e9ff:fee2:edd1"
+set ip6_addr "2001:1:2:3:aaaa:bbbb:cccc:dddd"
 
 # I use 'update' here as it has a static ip address, if I use 'add' I lose the association in :hostmgr list
 exec_cmd ":hostmgr update  mac_addr=$mac_addr  host_type=Generic  host_name=$hostname user_friendly_name=$hostname dns_name=$hostname  type=L3-IP interface=ETH.Phys.ethif2 ip_intf=IP.Intf.LocalNetwork user_set=yes"
@@ -18,7 +18,7 @@ exec_cmd ":dns server host add name=$hostname addr=$ip_addr  addr6=$ip6_addr ttl
 
 
 # Dynamic IP addr
-set mac_addr "00:15:f2:00:4d:de  "
-set hostname "mint"
+set mac_addr "10:11:12:13:14:15"
+set hostname "dynamic_ip_computer_hostname"
 exec_cmd ":hostmgr add  mac_addr=$mac_addr host_type=Generic  host_name=$hostname user_friendly_name=$hostname dns_name=$hostname  type=L3-IP interface=ETH.Phys.ethif1 ip_intf=IP.Intf.LocalNetwork user_set=yes"
 
