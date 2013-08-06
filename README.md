@@ -3,6 +3,8 @@ Technicolor TG788vn router (OVH) telnet configuration scripts
 
 Author: Gaëtan HARTER - hartergaetan@gmail.com
 
+[External Documentation in French](http://cladmi.eu/dokuwiki/doku.php?id=informatique:configuration_modem_ovh_tg788vn_telnet)
+
 
 I just wrote some scripts to configure the OVH router via telnet instead of using the web interface.
 I publish them in case it might help someone.
