@@ -26,3 +26,15 @@ After some modifications, changes must be saved on the router to be available af
     ./wrapper_script.expect save_all_config
 
 
+
+How it works
+------------
+
+
+The scripts are based on `expect`.
+
+They consist of a wrapper, which connects to the router and configure an alias which executes command and wait for the prompt.
+Then execute the script given in parameter.
+
+The executed scripts should be a sequence of `exec_cmd ":cmd to run on router"`.
+
