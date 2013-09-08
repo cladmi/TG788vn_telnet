@@ -1,0 +1,6 @@
+
+# Edit this configuration
+set router "<router_ip>"
+set user "<user_name>"
+set password "<password>"
+

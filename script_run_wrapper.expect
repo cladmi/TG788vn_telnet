@@ -3,9 +3,7 @@
 set script_name "[lindex $argv 0]"
 
 # config
-set name "<router_ip>"
-set user "<user_name>"
-set password "<password>"
+source config
 
 set timeout 20
 set break "\n\r"
@@ -22,7 +20,7 @@ proc exec_cmd { cmd_str } {
 }
 
 
-spawn telnet $name
+spawn telnet $router
 
 expect "Username : "
 send "$user"

@@ -4,6 +4,9 @@
 # as redirections are done "per ip address" I don't know how dynamic ip adresses are managed
 set ip_addr "192.168.1.2"
 
+exec_cmd ":service host disable name = redirections_server"
+# exec_cmd ":service host delete name = redirections_server mode = server"
+
 exec_cmd ":service host add name = redirections_server mode = server"
 exec_cmd ":service host rule add name=redirections_server  protocol=tcp  baseport=22  portrange=2022-2022"
 
@@ -15,6 +18,9 @@ exec_cmd ":service host rule add name=redirections_server  protocol=tcp portrang
 # web
 exec_cmd ":service host rule add name=redirections_server  protocol=tcp portrange=80-80"
 exec_cmd ":service host rule add name=redirections_server  protocol=tcp portrange=443-443"
+
+# IMAP
+exec_cmd ":service host rule add name=redirections_server  protocol=tcp portrange=143-143"
 
 
 # assign with ip server
