@@ -5,7 +5,7 @@
 set ip_addr "192.168.1.2"
 
 exec_cmd ":service host disable name = redirections_server"
-# exec_cmd ":service host delete name = redirections_server mode = server"
+exec_cmd ":service host delete name = redirections_server"
 
 exec_cmd ":service host add name = redirections_server mode = server"
 exec_cmd ":service host rule add name=redirections_server  protocol=tcp  baseport=22  portrange=2022-2022"
@@ -21,6 +21,12 @@ exec_cmd ":service host rule add name=redirections_server  protocol=tcp portrang
 
 # IMAP
 exec_cmd ":service host rule add name=redirections_server  protocol=tcp portrange=143-143"
+# ManageSieve
+exec_cmd ":service host rule add name=redirections_server  protocol=tcp portrange=4190-4190"
+
+# Transmission-daemon
+exec_cmd ":service host rule add name=redirections_server  protocol=tcp portrange=50000-50000"
+exec_cmd ":service host rule add name=redirections_server  protocol=udp portrange=50000-50000"
 
 
 # assign with ip server
